@@ -5,269 +5,293 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
+        tools:ignore="ContentDescription"
         android:layout_height="match_parent">
-    <android.support.constraint.ConstraintLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
+            android:layout_height="wrap_content">
         <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="230dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/background_image_layout_height"
                 android:background="@drawable/card_view_form"
                 android:id="@+id/imageView3"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:layout_editor_absoluteY="0dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"/>
-
+                app:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginTop="@dimen/no_space"
+                app:layout_constraintTop_toTopOf="parent"/>
 
         <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/label_width"
+                android:layout_height="@dimen/label_height"
                 android:background="@drawable/gradient_circle"
                 android:scaleType="fitXY"
                 android:layout_gravity="end"
                 android:src="@drawable/logo_5ka"
-                android:layout_marginTop="28dp"
-                android:elevation="2dp" app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginEnd="32dp" app:layout_constraintEnd_toEndOf="parent"/>
+                android:elevation="@dimen/cardview_default_elevation"
+                android:layout_marginEnd="44dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="140dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView"/>
 
-
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="197dp"
-                app:cardBackgroundColor="#FFFFFF"
-                android:background="@drawable/rounded_corners"
-                android:backgroundTint="#FFFFFF"
-                app:cardCornerRadius="20dp"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                app:cardCornerRadius="@dimen/card_view_radius"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:elevation="@dimen/cardview_default_elevation"
                 android:layout_gravity="start"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="@dimen/layout_margin_end"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimen/layout_margin_start"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="50dp"
-                app:cardElevation="1dp"
-                app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/cardView">
+                android:layout_marginTop="30dp"
+                app:cardElevation="@dimen/cardview_compat_inset_shadow"
+                app:layout_constraintTop_toBottomOf="@id/user_name"
+                android:id="@+id/cardView"
+                android:focusable="true">
 
-            <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
                 <TextView
+                        android:id="@+id/cardName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Выручай карта"
-                        android:textColor="#030303"
-                        android:textSize="25dp"
-                        android:layout_marginStart="10dp"/>
+                        android:text="@string/card_name"
+                        android:textColor="@color/blackColor"
+                        android:textSize="@dimen/card_name_text_size"
+                        android:layout_marginTop="@dimen/layout_margin_top"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/layout_margin_start"/>
                 <TextView
-                        android:text="Подробнее о карте"
+
+                        android:text="@string/card_info"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:id="@+id/textView"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/layout_margin_start"
+                        android:id="@+id/cardInfo"
+                        android:layout_marginTop="@dimen/layout_margin_top"
+                        app:layout_constraintTop_toBottomOf="@+id/cardName"/>
                 <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
+                        android:id="@+id/background_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/card_image_layout_height"
+                        app:layout_constraintStart_toStartOf="parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/cardimage"/>
+                        android:src="@drawable/cardimage"
+                        android:layout_marginTop="@dimen/layout_margin_top"
+                        android:layout_marginStart="@dimen/layout_margin_start"
+                        android:layout_marginEnd="@dimen/layout_margin_end"
+                        app:layout_constraintTop_toBottomOf="@+id/cardInfo"/>
                 <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
+                        android:id="@+id/shtrish_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/card_image_layout_height"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/code"/>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-
-
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:src="@drawable/code"
+                        android:layout_marginTop="@dimen/layout_margin_top"
+                        android:layout_marginBottom="@dimen/layout_margin_bottom"
+                        android:layout_marginStart="@dimen/layout_margin_start"
+                        android:layout_marginEnd="@dimen/layout_margin_end"
+                        app:layout_constraintTop_toBottomOf="@+id/background_image"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
         <TextView
-                android:text="Баланс"
+                android:id="@+id/balans_text_view"
+                android:text="@string/balans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#030303"
-                android:textSize="20dp"
+                android:textColor="@color/titleTextColor"
+                android:textSize="@dimen/balans_titel_size"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="10dp"
-                android:id="@+id/textView2"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/cardView"/>
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:layout_marginTop="@dimen/item_layout_margin_top"
+                app:layout_constraintTop_toBottomOf="@+id/cardView" android:textStyle="bold"/>
 
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/balans_card"
+                    android:layout_width="@dimen/no_space"
+                    android:layout_height="@dimen/no_space"
+                    app:cardCornerRadius="@dimen/card_view_radius"
+                    android:layout_marginStart="@dimen/layout_margin_start"
+                    android:clickable="true"
+                    android:layout_marginTop="@dimen/constrain_layout_margin_top"
+                    android:layout_marginBottom="@dimen/constrain_layout_margin_bottom"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/balans_text_view"
+                    app:layout_constraintBottom_toTopOf="@+id/textView3"
+                    app:layout_constraintEnd_toStartOf="@+id/kupons"
+                    android:focusable="true">
 
-        <HorizontalScrollView
-                android:id="@+id/hscroll"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="0dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/textView2">
-            <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#FFFFFF"
-                    android:orientation="horizontal"
-                    android:visibility="visible">
-
-                <android.support.v7.widget.CardView
-                        android:layout_width="165dp"
-                        app:cardCornerRadius="20dp"
-                        android:layout_marginStart="10dp"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:background="@drawable/balans_card_view"
                         android:clickable="true"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_height="165dp">
-                    <android.support.constraint.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:foreground="?android:attr/selectableItemBackground"
-                            android:background="@drawable/balans_card_view" android:clickable="true">
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="top|start"
-                                android:layout_marginStart="16dp"
-                                android:textColor="#ffff"
-                                android:textSize="18dp"
-                                android:text="Баланс"
-                                app:layout_constraintStart_toStartOf="parent" android:textStyle="bold"
-                                android:id="@+id/textView6" app:layout_constraintTop_toTopOf="parent"
-                                android:layout_marginTop="2dp"/>
+                        android:focusable="true">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|start"
+                            android:layout_marginStart="@dimen/layout_margin_start"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="@dimen/balans_titel_text_size"
+                            android:text="@string/balans"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:textStyle="bold"
+                            android:id="@+id/textView6"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginTop="@dimen/balans_title_margin_top"/>
 
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="74dp"
-                                android:layout_gravity="start|center"
-                                android:textColor="#ffff"
-                                android:textSize="55dp"
-                                android:text="25"
-                                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-                                android:textAlignment="viewStart" android:textStyle="bold"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/textView6"
-                                app:layout_constraintVertical_bias="0.0"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="@dimen/balans_value_text_size"
+                            android:text="@string/default_balans"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginStart="@dimen/layout_margin_start"
+                            android:textAlignment="viewStart"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@+id/textView6"/>
 
-                        <ImageView
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:background="@drawable/balans_cicle"
-                                android:scaleType="fitStart"
-                                android:layout_gravity="bottom|end"
-                                android:src="@drawable/pyaterochka_app"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintBottom_toBottomOf="parent"/>
+                    <ImageView
+                            android:layout_width="@dimen/balans_image_layout_width"
+                            android:layout_height="@dimen/balans_image_layout_height"
+                            android:background="@drawable/balans_cicle"
+                            android:scaleType="fitStart"
+                            android:layout_gravity="bottom|end"
+                            android:src="@drawable/pyaterochka_app"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    </android.support.constraint.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
-                </android.support.v7.widget.CardView>
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/kupons"
+                    android:layout_width="@dimen/no_space"
+                    android:layout_height="@dimen/no_space"
+                    app:cardCornerRadius="@dimen/card_view_radius"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="@dimen/layout_margin_end"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="@dimen/layout_margin_bottom"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/balans_text_view"
+                    app:layout_constraintBottom_toTopOf="@id/textView4"
+                    app:layout_constraintStart_toEndOf="@id/balans_card"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:clickable="true"
+                    android:focusable="true">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/kupon_card_view"
+                        android:foreground="?android:attr/selectableItemBackground">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|start"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="@dimen/balans_titel_text_size"
+                            android:text="@string/cupony"
+                            android:textStyle="bold"
+                            android:id="@+id/textView7"
+                            android:layout_marginTop="@dimen/balans_title_margin_top"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginStart="@dimen/layout_margin_start"/>
 
-                <android.support.v7.widget.CardView
-                        android:layout_width="165dp"
-                        app:cardBackgroundColor="#051DF7"
-                        app:cardCornerRadius="20dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:clickable="true"
-                        android:layout_height="165dp">
-                    <android.support.constraint.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/kupon_card_view"
-                            android:foreground="?android:attr/selectableItemBackground">
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="top|start"
-                                android:textColor="#ffff"
-                                android:textSize="18dp"
-                                android:text="Купоны"
-                                android:textStyle="bold" android:id="@+id/textView7"
-                                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                                android:layout_marginStart="16dp" android:layout_marginTop="2dp"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:textColor="@color/whiteColor"
+                            android:textSize="@dimen/balans_value_text_size"
+                            android:text="@string/default_cupon_number"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginStart="@dimen/layout_margin_start"
+                            app:layout_constraintTop_toBottomOf="@+id/textView7"/>
 
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="74dp"
-                                android:layout_gravity="center|start"
-                                android:textColor="#ffff"
-                                android:textSize="55dp"
-                                android:text="2" android:textStyle="bold"
-                                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-                                app:layout_constraintTop_toBottomOf="@+id/textView7"/>
-
-                        <ImageView
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:background="@drawable/balans_cicle"
-                                android:scaleType="centerCrop"
-                                android:layout_gravity="bottom|end"
-                                android:src="@drawable/kupon"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintBottom_toBottomOf="parent"/>
-                    </android.support.constraint.ConstraintLayout>
-                </android.support.v7.widget.CardView>
-            </LinearLayout>
-        </HorizontalScrollView>
+                    <ImageView
+                            android:layout_width="@dimen/balans_image_layout_width"
+                            android:layout_height="@dimen/balans_image_layout_height"
+                            android:background="@drawable/balans_cicle"
+                            android:scaleType="centerCrop"
+                            android:layout_gravity="bottom|end"
+                            android:src="@drawable/kupon"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
         <TextView
-                android:text="Список покупок"
+                android:text="@string/list_of_shops"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 android:id="@+id/textView3"
-                android:textSize="17dp"
-                android:layout_marginStart="10dp"
-                android:textColor="#030303"
-                android:layout_marginTop="190dp" app:layout_constraintTop_toTopOf="@+id/hscroll"
+                android:textSize="@dimen/list_of_shops_text_size"
+                android:layout_marginStart="@dimen/layout_margin_start"
+                android:textColor="@color/titleTextColor"
+                android:layout_marginTop="@dimen/item_layout_margin_top"
+                app:layout_constraintTop_toBottomOf="@+id/balans_card"
                 android:textStyle="bold"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView4" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="10dp"
-                android:text="Cмотреть всё" android:layout_marginTop="192dp"
-                app:layout_constraintTop_toTopOf="@+id/hscroll"/>
+                android:id="@+id/textView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"
+                android:text="@string/view_all"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/kupons"/>
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listItem = "@layout/sale"
+                android:layout_height="wrap_content"
+                tools:listItem="@layout/sale"
                 app:layout_constraintTop_toBottomOf="@+id/textView3"/>
 
         <TextView
-                android:text="Андрей Колмогоров"
+                android:text="@string/default_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="10dp" android:id="@+id/textView5" android:textStyle="bold"
-                android:textColor="@color/cardview_light_background"
-                android:layout_marginTop="16dp" app:layout_constraintTop_toTopOf="parent"/>
+                android:layout_marginStart="16dp"
+                android:id="@+id/user_name"
+                android:textStyle="bold"
+                android:textColor="@color/userNameTextColor"
+                android:layout_marginTop="@dimen/user_name_layout_margin_top"
+                app:layout_constraintTop_toTopOf="parent"/>
 
         <ImageButton
-                android:layout_width="38dp"
-                android:layout_height="26dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_more_horiz_black_24dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="20dp"
-                android:longClickable="false"
-                android:layout_marginTop="14dp"
+                android:clickable="true"
+                android:padding="@dimen/no_space"
                 app:layout_constraintTop_toTopOf="parent"
-                android:foreground="?android:attr/selectableItemBackground"/>
-
-    </android.support.constraint.ConstraintLayout>
+                android:foreground="?android:attr/actionBarItemBackground"
+                android:layout_marginEnd="20dp"
+                android:focusable="true" android:layout_marginTop="4dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

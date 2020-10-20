@@ -1,15 +1,18 @@
 package com.example.myapplication
 
 import android.widget.TextView
-import android.support.v7.widget.CardView
-import android.support.v7.widget.RecyclerView
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import java.text.FieldPosition
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
 
-
-class RVAdapter(private var listPrice: List<String>, private var listTime: List<String>, private var listBonus: List<String>) :
+class RVAdapter(
+    private var listPrice: List<String>,
+    private var listTime: List<String>,
+    private var listBonus: List<String>
+) :
     RecyclerView.Adapter<RVAdapter.ViewHolder>() {
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
         val view: View = LayoutInflater.from(p0.context).inflate(R.layout.sale, p0, false)

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="card_name">Выручай карта</string>
+    <string name="card_info">Подробнее о карте</string>
+    <string name="balans">Баланс</string>
+    <string name="cupony">Купоны</string>
+    <string name="list_of_shops">Список покупок</string>
+    <string name="view_all">Смотреть всё</string>
+
+    <string name="default_balans">25</string>
+    <string name="default_user_name">Андрей Колмогоров</string>
+    <string name="default_cupon_number">2</string>
 </resources>

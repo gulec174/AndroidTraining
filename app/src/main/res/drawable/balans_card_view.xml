@@ -9,6 +9,6 @@
             android:centerColor="#FA0500"
             android:startColor="#A80500"/>
     <corners
-            android:radius="20dp">
+            android:radius="@dimen/card_view_radius">
     </corners>
 </shape>

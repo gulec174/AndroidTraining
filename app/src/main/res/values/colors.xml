@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#F0EBEB</color>
+    <color name="colorPrimaryDark">@color/redColor</color>
+    <color name="titleTextColor">@color/blackColor</color>
+    <color name="textColor">@color/greyColor</color>
+    <color name="userNameTextColor">@color/whiteColor</color>
+    <color name="cardBackgroundColor">@color/whiteColor</color>
+    <color name="constrainLayoutBackgroundColor">@color/whiteColor</color>
+
+
+    <color name="greyColor">#888787</color>
+    <color name="whiteColor">#FFFFFF</color>
+    <color name="blackColor">#030303</color>
+    <color name="blueColor">#0015FD</color>
+    <color name="redColor">#FF3F00</color>
+
 </resources>
